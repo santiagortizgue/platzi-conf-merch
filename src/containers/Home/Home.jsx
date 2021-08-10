@@ -1,13 +1,11 @@
 import React from 'react';
-
-import './Home.scss';
+import Products from '../../components/Products/Products';
+import initialState from '../../initialState';
 
 const Home = () => {
 
     return (
-        <div className="Home">
-            Home
-        </div>
+        <Products products={initialState.products} />
     );
 }
 

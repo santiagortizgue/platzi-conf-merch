@@ -7,13 +7,13 @@ import Payment from '../containers/Payment/Payment';
 import Success from '../containers/Success/Success';
 import NotFound from '../containers/NotFound/NotFound';
 
-import './App.scss';
+import Layout from '../components/Layout/Layout';
 
 const App = () => {
 
     return (
-        <div className="App">
-            <BrowserRouter>
+        <BrowserRouter>
+            <Layout>
                 <Switch>
                     <Route exact path="/" component={Home} />
                     <Route exact path="/checkout" component={Checkout} />
@@ -22,8 +22,8 @@ const App = () => {
                     <Route exact path="/checkout/success" component={Success} />
                     <Route component={NotFound} />
                 </Switch>
-            </BrowserRouter>
-        </div>
+            </Layout>
+        </BrowserRouter>
     );
 }
 
