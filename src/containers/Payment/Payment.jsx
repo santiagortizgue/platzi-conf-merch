@@ -29,7 +29,6 @@ const Payment = () => {
   };
 
   const handlePaymentSucces = (data) => {
-    console.log(data);
     if(data.status === 'COMPLETED'){
       const newOrder = {
         buyer,
@@ -61,8 +60,8 @@ const Payment = () => {
             amount={handleSumTotal()}
             onPaymentStart={() => console.log('Start Payment')}
             onPaymentSuccess={data => handlePaymentSucces(data)}
-            onPaymentError={error => console.log(error)}
-            onPaymentCancel={data => console.log(data)}>
+            onPaymentError={error => console.log("Error", error)}
+            onPaymentCancel={data => console.log("Cancelado", data)}>
             Boton de Pago con Paypal
           </PayPalButton>
         </div>
