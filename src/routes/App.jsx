@@ -14,9 +14,11 @@ import Layout from '../components/Layout/Layout';
 
 const App = () => {
   const initialState = useInitialState();
+  const isEmpty = Object.keys(initialState.state).length;
 
   return (
-    <AppContext.Provider value={initialState}>
+    <>
+    {isEmpty > 0 ? (<AppContext.Provider value={initialState}>
       <BrowserRouter>
         <Layout>
           <Switch>
@@ -29,7 +31,9 @@ const App = () => {
           </Switch>
         </Layout>
       </BrowserRouter>
-    </AppContext.Provider>
+    </AppContext.Provider>) : <h1>Cargando...</h1>}
+    
+    </>
   );
 };
 
